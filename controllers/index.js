@@ -11,9 +11,9 @@ router.get("/", (req, res) => {
   res.send("Here fishy fishy.");
 });
 
-router.use("/api/projector", projectorRoutes);
-router.use("/api/screen", screenRoutes);
-router.use("/api/computer", computerRoutes);
+router.use("/api/projectors", projectorRoutes);
+router.use("/api/screens", screenRoutes);
+router.use("/api/computers", computerRoutes);
 router.use("/api/audio", audioRoutes);
 router.use("/api/misc", miscRoutes)
 
