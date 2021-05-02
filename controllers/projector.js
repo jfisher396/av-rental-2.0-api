@@ -11,4 +11,16 @@ router.get("/", (req, res) => {
   })
 });
 
+router.post("/", (req,res) => {
+  db.Projector.create({
+    model: req.body.model,
+    price: req.body.price
+  }).then(newProjector => {
+    res.json(newProjector)
+  }).catch(err => {
+    console.log(err);
+    res.status(500).end()
+  })
+})
+
 module.exports = router;
