@@ -15,6 +15,6 @@ router.use("/api/projectors", projectorRoutes);
 router.use("/api/screens", screenRoutes);
 router.use("/api/computers", computerRoutes);
 router.use("/api/audio", audioRoutes);
-router.use("/api/misc", miscRoutes)
+router.use("/api/miscav", miscRoutes)
 
 module.exports = router;

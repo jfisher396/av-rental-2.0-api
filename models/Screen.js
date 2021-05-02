@@ -1,8 +1,8 @@
 module.exports = function(sequelize, DataTypes) {
-    var Screens = sequelize.define('Screens', {
+    var Screen = sequelize.define('Screen', {
         model:DataTypes.STRING,
         price:DataTypes.INTEGER
     })
 
-    return Screens
+    return Screen
 }
