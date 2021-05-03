@@ -14,7 +14,9 @@ router.get("/", (req, res) => {
 router.post("/", (req,res) => {
   db.Projector.create({
     model: req.body.model,
-    price: req.body.price
+    price: req.body.price,
+    image: req.body.image,
+    description: req.body.description
   }).then(newProjector => {
     res.json(newProjector)
   }).catch(err => {

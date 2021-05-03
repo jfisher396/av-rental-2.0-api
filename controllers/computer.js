@@ -11,4 +11,18 @@ router.get("/", (req, res) => {
   })
 });
 
+router.post("/", (req,res) => {
+  db.Computer.create({
+    model: req.body.model,
+    price: req.body.price,
+    image: req.body.image,
+    description: req.body.description
+  }).then(newComputer => {
+    res.json(newComputer)
+  }).catch(err => {
+    console.log(err);
+    res.status(500).end()
+  })
+})
+
 module.exports = router;
