@@ -4,9 +4,10 @@ module.exports = function(sequelize, DataTypes) {
         type: DataTypes.STRING,
         lumens:DataTypes.INTEGER,
         price:DataTypes.INTEGER,
-        image:DataTypes.STRING,
+        image1:DataTypes.STRING,
+        image2:DataTypes.STRING,
         description:DataTypes.STRING
-        
+
     })
 
     return Projector
