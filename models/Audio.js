@@ -1,12 +1,13 @@
 module.exports = function(sequelize, DataTypes) {
-    var Audio = sequelize.define('Audio', {
+    const Audio = sequelize.define('Audio', {
         id: { 
-            type: DataTypes.INTEGER,
+            type:DataTypes.INTEGER,
             primaryKey: "true"
         },
         model:DataTypes.STRING,
-        price:DataTypes.INTEGER,
-        image:DataTypes.STRING,
+        rate:DataTypes.INTEGER,
+        image1:DataTypes.STRING,
+        image2:DataTypes.STRING,
         description:DataTypes.STRING
     })
 
