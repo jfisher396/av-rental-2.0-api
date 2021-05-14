@@ -26,8 +26,11 @@ app.use(cors({
 }))
 app.use(session({
   secret: "secretcode",
-  resave: true,
-  saveUninitialized: true
+  resave: false,
+  saveUninitialized: false,
+  cookie: {
+    maxAge: 2*60*60*1000
+  }
 }))
 app.use(cookieParser("secretcode"))
 
