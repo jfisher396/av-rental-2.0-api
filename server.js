@@ -1,12 +1,8 @@
+require("dotenv").config();
 const express = require("express")
 const cors = require("cors")
 const helmet = require('helmet')
-const passport = require('passport')
-const passportLocal = require('passport-local').Strategy
-const cookieParser = require('cookie-parser')
-const becrypt = require('bcrypt')
 const session = require('express-session')
-// const bodyParser = require('body-parser')
 const db = require("./models")
 const allRoutes = require("./controllers")
 
@@ -16,8 +12,6 @@ const PORT = process.env.PORT || 8080
 
 //Middleware
 app.use(helmet())
-// app.use(bodyParser.json())
-// app.use(bodyParser.urlencoded({ extended: true }))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 app.use(cors({
@@ -32,8 +26,6 @@ app.use(session({
     maxAge: 2*60*60*1000
   }
 }))
-app.use(cookieParser("secretcode"))
-
 
 //Routes
 app.use("/", allRoutes)
