@@ -49,4 +49,29 @@ router.get('/readsessions', (req,res) => {
   res.json(req.session)
 })
 
+//route to get data on current user
+router.get("/currentuserdata", (req, res) => {
+  if (!req.session.user) {
+    res.status(401).send("Login required!");
+  } else {
+    db.User.findOne({
+      where: {
+        id: req.session.user.id,
+      },
+    })
+      .then((userData) => {
+        res.json(userData);
+      })
+      .catch((err) => {
+        console.log(err);
+        res.status(500).end();
+      });
+  }
+});
+
+router.get("/logout",(req,res)=>{
+    req.session.destroy();
+    res.send("You are now logged out.")
+})
+
 module.exports = router;

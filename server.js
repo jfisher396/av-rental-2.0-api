@@ -35,7 +35,7 @@ app.use(session({
 //   credentials: true
 // }))
 // app.use(session({
-//   secret: "secretcode",
+//   secret: process.env.SECRET_CODE,
 //   resave: false,
 //   saveUninitialized: false,
 //   cookie: {
